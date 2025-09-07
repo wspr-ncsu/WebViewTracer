@@ -1,0 +1,5 @@
+services:
+  log_parser_worker:
+    build:
+      args:
+        DOCKER_IMAGE: vv8-postprocessors-local:latest

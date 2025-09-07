@@ -1,0 +1,31 @@
+  vv8_worker_$ID:
+    restart: unless-stopped
+    depends_on:
+      - task_queue_broker
+      - database
+    build:
+      context: ./celery_workers
+      dockerfile: vv8_worker.physical.dockerfile
+      network: host
+      args:
+        ANDROID_ID: $SERIAL
+    image: vv8_crawler_worker
+    ports:
+      - $SCRCPYPORT1:5901
+      - $SCRCPYPORT2:6901
+    environment:
+      ANDROID_ID: $SERIAL
+      ANDROID_SERIAL: $SERIAL
+    privileged: true
+    env_file:
+      - .env
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - /sys:/sys
+      - ./scratch:/app/scratch:rwx
+      - ./bugreport:/app/bugreport:rwx
+      - /run/udev/:/run/udev/
+      - $USER_ANDROID_DIR:/root/.android/
+      - ./raw_logs:/app/vv8_worker/uiharvester/vv8uiharvester:rwx
+      - $APP_DIRECTORY:/app/vv8_worker/apps:rw
+      - $BAD_DATA_DIR:/app/logs/:rw

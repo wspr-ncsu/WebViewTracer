@@ -1,0 +1,29 @@
+  vv8_worker_$ID:
+    restart: unless-stopped
+    depends_on:
+      - task_queue_broker
+      - database
+    build:
+      context: ./celery_workers
+      dockerfile: vv8_worker.virtual.dockerfile
+      network: host
+      args:
+        KVM_GID: $HOST_KVM_GID
+    image: vv8_crawler_worker
+    privileged: true
+    ports:
+      - "5901:5901"   # VNC server
+      - "6901:6901"   # noVNC web client
+    env_file:
+      - .env
+    environment:
+      ADB_SETUP: virtual
+    volumes:
+      - ./raw_logs:/app/vv8_worker/uiharvester/vv8uiharvester:rwx
+      - $APP_DIRECTORY:/app/vv8_worker/apps:rw
+      - $BAD_DATA_DIR:/app/logs/:rw
+      - /dev/kvm:/dev/kvm
+      - ./celery_workers/avd/data/.android:/home/android/.android/
+      - ./celery_workers/avd/data/systemimages:/opt/android-sdk/system-images/android-33/google_apis_playstore/x86_64/
+      - ./celery_workers/avd/data/skins:/opt/android-sdk/skins/pixel_6a
+      - ./vpn/:/app/vpn/
