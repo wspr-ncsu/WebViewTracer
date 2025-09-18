@@ -28,7 +28,7 @@ cd webviewtracer-crawler && bash ./setup.sh
 
 You can access the execution traces collected during the experiment [on DataDryad](http://datadryad.org/share/aGfKK8cTsp7uDGu3tjkcPX5cGwqGngJH9ekPTIj8qn4).
 
-For detailed instructions, see the [artifact appendix](./artifact.pdf).
+For detailed instructions, see the [artifact appendix](./artifact.pdf). Additional artifacts required to run the experiment can be found [on Zenodo](https://zenodo.org/records/16687648).
 
 ## System Requirements
 
@@ -41,7 +41,7 @@ For detailed instructions, see the [artifact appendix](./artifact.pdf).
 
   * [Python 3.10+](https://www.python.org/)
   * [Docker](https://docs.docker.com/) (for  crawling).
-  * Standard build tools: `git`, `make`, `unzip`, `curl`
+  * Standard build tools: `git`, `make`, `unzip`, `curl`, `tar`
 
 Please make sure you are able to docker without `sudo` privileges by following the [instructions documented here](https://docs.docker.com/engine/install/linux-postinstall/).
 
