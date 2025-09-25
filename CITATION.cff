@@ -1,0 +1,101 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Cross-Boundary Mobile Tracking: Exploring
+  Java-to-JavaScript Information Diffusion in WebViews
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Sohom
+    family-names: Datta
+    email: sdatta4@ncsu.edu
+    affiliation: North Carolina State University
+  - given-names: Michalis
+    family-names: Diamantaris
+    affiliation: Technical University of Crete
+    email: mdiamantaris@tuc.gr
+  - given-names: Ahsan
+    family-names: Zafar
+    email: azafar2@ncsu.edu
+    affiliation: North Carolina State University
+  - affiliation: North Carolina State University
+    given-names: Junhua
+    family-names: Su
+    email: jsu6@ncsu.edu
+  - given-names: Anupam
+    family-names: Das
+    email: anupam.das@ncsu.edu
+    affiliation: North Carolina State University
+  - given-names: Jason
+    family-names: Polakis
+    email: polakis@uic.edu
+    affiliation: University of Illinois Chicago
+  - given-names: Alexandros
+    family-names: Kapravelos
+    email: akaprav@ncsu.edu
+    affiliation: North Carolina State University
+identifiers:
+  - type: doi
+    value: 10.14722/ndss.2026.230910
+repository-code: 'https://github.com/wspr-ncsu/WebViewTracer'
+url: 'https://go.ncsu.edu/webviewtracer'
+repository: 'https://doi.org/10.5281/zenodo.16687648'
+repository-artifact: 'https://doi.org/10.5061/dryad.05qfttffz'
+abstract: >-
+  WebViews are a prevalent method of embedding web-based
+  content in Android apps. While they offer functionality
+  similar to that of browsers and execute in an isolated
+  context, apps can directly interfere with WebViews by
+  dynamically injecting JavaScript code at runtime. While
+  prior work has extensively analyzed apps' Java code,
+  existing frameworks have limited visibility of the
+  JavaScript code being executed inside WebViews.
+  Consequently, there is limited understanding of the
+  behaviors and characteristics of the scripts executed
+  within WebViews, and whether privacy violations occur.
+
+
+  To address this gap, we propose WebViewTracer, a framework
+  designed to dynamically analyze the execution of
+  JavaScript code within WebViews at runtime. Our system
+  combines within-WebView JavaScript execution traces with
+  Java method-call information to also capture the
+  information exchange occurring between Java SDKs and web
+  scripts. We leverage WebViewTracer to perform the first
+  large-scale, dynamic analysis of privacy-violating
+  behaviors inside WebViews, on a dataset of 10K Android
+  apps. We detect 4,597 apps that load WebViews, and find
+  that over 69% of them inject sensitive and
+  tracking-related information that is typically
+  inaccessible to JavaScript code into WebViews. This
+  includes identifiers like the Advertising ID and Android
+  build ID. Crucially, 90% of those apps use web-based APIs
+  to exfiltrate this information to third-party servers. We
+  also uncover concrete evidence of common web
+  fingerprinting techniques being used by JavaScript code
+  inside WebViews, which can supplement their tracking
+  information. We observe that the dynamic properties of
+  WebViews are being actively leveraged for sensitive
+  information diffusion across multiple actors in the mobile
+  tracking ecosystem, demonstrating the privacy risks posed
+  by Android WebViews. By shedding light on these ongoing
+  privacy violations, our study seeks to prompt additional
+  scrutiny from platform stakeholders on the use of embedded
+  web technologies and highlights the need for additional
+  safeguards.
+keywords:
+  - dynamic analysis
+  - browser instrumentation
+  - privacy
+  - WebViews
+  - Android
+  - VisibleV8
+  - advertising
+license: BSD-3-Clause
+commit: f08b19896ee00c438aefcedf1dd41ad142f0bfac
+version: '1.0'
+date-released: '2025-09-25'
