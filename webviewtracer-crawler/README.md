@@ -74,7 +74,8 @@ There are many more postprocessors available for the VisibleV8 logs at the [Visi
 ## Obtaining results
 
 - Run:
-```python3 ./scripts/wvt-cli.py results
+```
+python3 ./scripts/wvt-cli.py results
 ```
 
 ## References
