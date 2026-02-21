@@ -4,7 +4,7 @@
 
 This repository contains the artifact for our paper:
 
-**_Cross-Boundary Mobile Tracking: Exploring Java-to-JavaScript Information Diffusion in WebViews_**
+**_[Cross-Boundary Mobile Tracking: Exploring Java-to-JavaScript Information Diffusion in WebViews](https://www.ndss-symposium.org/ndss-paper/cross-boundary-mobile-tracking-exploring-java-to-javascript-information-diffusion-in-webviews/)_**
 
 The artifact is divided into three main components:
 
@@ -74,7 +74,7 @@ If you use any component of WebViewTracer in your research, please cite:
 @inproceedings{datta2025webviewtracer,
   title={Cross-Boundary Mobile Tracking: Exploring Java-to-JavaScript Information Diffusion in WebViews},
   author={Datta, Sohom and Diamantaris, Michalis and Zafar, Ahsan and Su, Junhua and Das, Anupam and Polakis, Jason and Kapravelos, Alexandros},
-  booktitle={Proceedings of the Network and Distributed System Security Symposium (NDSS)},
+  booktitle={Proceedings of the Network and Distributed System Security Symposium (NDSS) 2026},
   year={2026},
 }
 ```
